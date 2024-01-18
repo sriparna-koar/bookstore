@@ -1,0 +1,50 @@
+
+.p-4 {
+    margin: auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gap-x-4 > * + * {
+    margin-left: 1rem;
+  }
+  
+  .bg-sky-300 {
+    background-color: #7fd1e0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bg-sky-300:hover {
+    background-color: #141f22;
+  }
+  
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+  
+  .my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .text-sky-800 {
+    color: #070f12;
+  }
+  
+  .text-4xl {
+    font-size: 2.25rem;
+  }
