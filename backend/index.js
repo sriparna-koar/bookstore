@@ -1,8 +1,58 @@
+// import express from 'express';
+// import { PORT, mongoDBURL } from './config.js';
+// import mongoose from 'mongoose';
+// import booksRoute from './routes/booksRoute.js';
+// import cors from 'cors';
+
+// const app = express();
+
+// // Middleware for parsing request body
+// app.use(express.json());
+
+// // Middleware for handling CORS POLICY
+// // Option 1: Allow All Origins with Default of cors(*)
+// app.use(cors());
+// // Option 2: Allow Custom Origins
+// // app.use(
+// //   cors({
+// //     origin: 'http://localhost:3000',
+// //     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+// //     allowedHeaders: ['Content-Type'],
+// //   })
+// // );
+
+// app.get('/', (request, response) => {
+//   console.log(request);
+//   return response.status(234).send('Welcome To MERN Stack Tutorial');
+// });
+
+// app.use('/books', booksRoute);
+
+// mongoose
+//   .connect(mongoDBURL)
+//   .then(() => {
+//     console.log('App connected to database');
+//     app.listen(PORT, () => {
+//       console.log(`App is listening to port: ${PORT}`);
+//     });
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+
+
+
+
+
+
+
 import express from 'express';
 import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
+import mime from 'mime-types'; // Import mime-types package
 
 const app = express();
 
@@ -10,16 +60,17 @@ const app = express();
 app.use(express.json());
 
 // Middleware for handling CORS POLICY
-// Option 1: Allow All Origins with Default of cors(*)
 app.use(cors());
-// Option 2: Allow Custom Origins
-// app.use(
-//   cors({
-//     origin: 'http://localhost:3000',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type'],
-//   })
-// );
+
+// Serve static files with correct MIME type
+app.use(express.static('public', {
+  setHeaders: (res, path) => {
+    const contentType = mime.contentType(path);
+    if (contentType) {
+      res.setHeader('Content-Type', contentType);
+    }
+  }
+}));
 
 app.get('/', (request, response) => {
   console.log(request);
@@ -39,3 +90,4 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
+
