@@ -18,7 +18,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import App from './App.jsx'; // Make sure the file extension matches the actual file type
+import App from './App.js'; // Make sure the file extension matches the actual file type
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { SnackbarProvider } from 'notistack';
