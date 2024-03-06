@@ -62,7 +62,7 @@ app.use(express.json());
 // Middleware for handling CORS POLICY
 app.use(cors(
   {
-    origin: ["https://bookstore-frontend-phi.vercel.app/"],
+    origin: ["https://bookstore-frontend-phi.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true
 }
