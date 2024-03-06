@@ -66,7 +66,7 @@ const App = () => {
 
   const addBook = async (bookData) => {
     try {
-      const response = await axios.post('https://bookstore-two-swart.vercel.app/', bookData); // Replace 'your-post-url' with your actual POST URL
+      const response = await axios.post('https://bookstore-two-swart.vercel.app', bookData); // Replace 'your-post-url' with your actual POST URL
       console.log(response.data); // Log response data
     } catch (error) {
       console.error('Error adding book:', error);
