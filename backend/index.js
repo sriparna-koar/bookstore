@@ -52,7 +52,7 @@ import { PORT, mongoDBURL } from './config.js';
 import mongoose from 'mongoose';
 import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
-import mime from 'mime-types'; // Import mime-types package
+
 
 const app = express();
 
@@ -62,15 +62,6 @@ app.use(express.json());
 // Middleware for handling CORS POLICY
 app.use(cors());
 
-// Serve static files with correct MIME type
-app.use(express.static('public', {
-  setHeaders: (res, path) => {
-    const contentType = mime.contentType(path);
-    if (contentType) {
-      res.setHeader('Content-Type', contentType);
-    }
-  }
-}));
 
 app.get('/', (request, response) => {
   console.log(request);
