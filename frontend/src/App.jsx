@@ -9,7 +9,6 @@ import './App.css';
 
 const App = () => {
   return (
-
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/books/create' element={<CreateBook />} />
@@ -21,4 +20,3 @@ const App = () => {
 };
 
 export default App;
-
