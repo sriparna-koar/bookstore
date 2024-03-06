@@ -63,7 +63,7 @@ app.use(express.json());
 app.use(cors(
   {
     origin: ["https://bookstore-frontend-phi.vercel.app"],
-    methods: ["POST", "GET","DELETE","UPDATE"],
+    methods: ["POST", "GET","DELETE","UPDATE","PUT"],
     credentials: true
 }
 ));
